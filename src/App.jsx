@@ -1,11 +1,24 @@
 import React from "react";
 import "./style/fonts/josefin-slab.css";
 import "./style/App.css";
+import Home from "./components/pages/Home";
+import Contact from "./components/pages/Contact";
 import { properties } from "./properties";
-import ThemedButton from "./components/ThemedButton";
-import Navbar from './components/Navbar';
 import { createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@emotion/react";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+
+  {
+    path: "/contact",
+    element: <Contact />,
+  },
+])
 
 const theme = createTheme({
   palette: {
@@ -26,12 +39,7 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
-        <Navbar />
-        <ThemedButton btnText={"Educators"} />
-        <ThemedButton btnText={"Students"} />
-        <ThemedButton btnText={"Parents"} />
-      </div>
+      <RouterProvider router={ router } />
     </ThemeProvider>
   );
 }
