@@ -2,6 +2,8 @@ import React from 'react'
 import "../../style/fonts/josefin-sans.css";
 import Navbar from '../Navbar';
 import ThemedButton from '../ThemedButton';
+import About from './About';
+import Services from './Services';
 import Grid from '@mui/system/Unstable_Grid';
 import { Typography } from '@mui/material'
 import { styled } from "@mui/material/styles";
@@ -35,6 +37,8 @@ const Home = () => {
                 <ThemedButton btnText={ "Parents" } />
             </Grid>
         </Grid>
+        <About />
+        <Services />
     </div>
   )
 }
