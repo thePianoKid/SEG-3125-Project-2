@@ -82,9 +82,9 @@ function Navbar() {
             sx={{ ":hover": { cursor: "pointer" } }}
             onClick={navHome}
           />
-          <MenuItem variant="h4">About</MenuItem>
-          <MenuItem variant="h4">Services</MenuItem>
-          <MenuItem variant="h4" onClick={navContact}>
+          <MenuItem>About</MenuItem>
+          <MenuItem>Services</MenuItem>
+          <MenuItem onClick={navContact}>
             Contact
           </MenuItem>
         </Toolbar>
