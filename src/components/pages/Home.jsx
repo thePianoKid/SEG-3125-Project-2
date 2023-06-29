@@ -1,22 +1,24 @@
-import React from 'react'
+import React from "react"
 import "../../style/fonts/josefin-sans.css";
-import Navbar from '../Navbar';
-import ThemedButton from '../ThemedButton';
-import About from './About';
-import Services from './Services';
-import Grid from '@mui/system/Unstable_Grid';
-import { Typography } from '@mui/material'
+import Navbar from "../Navbar";
+import ThemedButton from "../ThemedButton";
+import About from "./About";
+import Services from "./Services";
+import WorkshopSearchCity from "../WorkshopSearch";
+import Grid from "@mui/system/Unstable_Grid";
+import { Typography } from "@mui/material"
 import { styled } from "@mui/material/styles";
+import { properties } from "../../properties";
 
 const SplashPageTitle = styled(Typography)(() => ({
     fontFamily: "Josefin Sans",
     fontSize: "30px",
-    color: "#6D6D6D",
+    color: properties.style.primary.grey,
 }));
 
 const SplashPageBody = styled(Typography)(() => ({
     fontSize: "18px",
-    color: "#6D6D6D",
+    color: properties.style.primary.grey,
 }));
 
 const Home = () => {
@@ -39,6 +41,7 @@ const Home = () => {
         </Grid>
         <About />
         <Services />
+        <WorkshopSearchCity />
     </div>
   )
 }

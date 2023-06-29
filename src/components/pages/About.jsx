@@ -3,13 +3,14 @@ import "../../style/fonts/roboto.css";
 import { styled } from "@mui/material/styles";
 import { Grid, ListItem, Typography, Container } from "@mui/material";
 import ThemedButton from "../ThemedButton";
+import { properties } from "../../properties";
 
 const AboutTitle = styled(Typography)(() => ({
   margin: "auto",
   textAlign: "center",
   fontFamily: "Josefin Sans",
   fontSize: "30px",
-  color: "#6D6D6D",
+  color: properties.style.primary.grey,
 }));
 
 const StyledListItem = styled(ListItem)(() => ({
