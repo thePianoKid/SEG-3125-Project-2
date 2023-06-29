@@ -1,6 +1,8 @@
-import React from "react";
+import React, { forwardRef } from "react";
+import "../../style/fonts/roboto.css";
 import { styled } from "@mui/material/styles";
-import { Grid, ListItem, Typography } from "@mui/material";
+import { Grid, ListItem, Typography, Container } from "@mui/material";
+import ThemedButton from "../ThemedButton";
 
 const AboutTitle = styled(Typography)(() => ({
   margin: "auto",
@@ -10,28 +12,35 @@ const AboutTitle = styled(Typography)(() => ({
   color: "#6D6D6D",
 }));
 
+const StyledListItem = styled(ListItem)(() => ({
+  fontFamily: "Roboto",
+  fontSize: "18px",
+}))
+
 function About() {
   return (
     <div>
       <AboutTitle sx={{ pt: 18, pb: 7 }}>How can we help?</AboutTitle>
       <Grid container spacing={2}>
-        <Grid xs={3}></Grid>
-        <Grid xs={9}>
-          <ListItem sx={{ display: "list-item" }}>
+        <Grid xs={6}></Grid>
+        <Grid xs={6}>
+          <StyledListItem sx={{ display: "list-item" }}>
             Steampunk creates programs that teach the basics of STEM
-          </ListItem>
-          <ListItem sx={{ display: "list-item" }}>
+          </StyledListItem>
+          <StyledListItem sx={{ display: "list-item" }}>
             Each program is created to fit the specific needs of your education
             centre
-          </ListItem>
-          <ListItem sx={{ display: "list-item" }}>
+          </StyledListItem>
+          <StyledListItem sx={{ display: "list-item" }}>
             Steampunk has partnered with schools, libraries & community centres
             across Ontario & Québec
-          </ListItem>
+          </StyledListItem>
+          <Container sx={{ pb: "30px" }}></Container>
+          <ThemedButton btnText={"Educators, start here"} />
         </Grid>
       </Grid>
     </div>
   );
 }
 
-export default About;
+export default forwardRef(About);
