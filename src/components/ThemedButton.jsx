@@ -2,7 +2,9 @@ import React from "react";
 import { Button } from "@mui/material";
 import { properties } from "../properties";
 
-function ThemedButton({ btnText }) {
+function ThemedButton(props) {
+  const { btnText, ...other } = props;
+
   return (
     <Button
       className="btn"
@@ -14,8 +16,8 @@ function ThemedButton({ btnText }) {
         "&:hover": {
           backgroundColor: properties.style.primary.main,
         },
-        marginRight: "40px",
       }}
+      {...other}
     >
       {btnText}
     </Button>

@@ -9,6 +9,7 @@ import Grid from "@mui/system/Unstable_Grid";
 import { Typography } from "@mui/material"
 import { styled } from "@mui/material/styles";
 import { properties } from "../../properties";
+import { Link } from "react-router-dom";
 
 const SplashPageTitle = styled(Typography)(() => ({
     fontFamily: "Josefin Sans",
@@ -25,7 +26,7 @@ const Home = () => {
   return (
     <div>
         <Navbar />
-        <Grid container spacing={2}>
+        <Grid container>
             <Grid xs={6}></Grid>
             <Grid xs={6}>
                 <SplashPageTitle sx={{ pt: 23 }}>
@@ -34,9 +35,15 @@ const Home = () => {
                 <SplashPageBody sx={{ pt: 2, pb: 3 }}>
                     Revolutionize your education centre with educational resources and passionate instructors who specialize in teaching STEM.
                 </SplashPageBody>
-                <ThemedButton btnText={ "Educators" } />
-                <ThemedButton btnText={ "Students" } />
-                <ThemedButton btnText={ "Parents" } />
+                <Link to="/quizeducator">
+                    <ThemedButton sx={{ mr: "40px" }} btnText={ "Educators" } />
+                </Link>
+                <Link to="/quizstudent">
+                    <ThemedButton sx={{ mr: "40px" }} btnText={ "Students" } />
+                </Link>
+                <Link to="/quizparent">
+                    <ThemedButton btnText={ "Parents" } />
+                </Link>
             </Grid>
         </Grid>
         <About />

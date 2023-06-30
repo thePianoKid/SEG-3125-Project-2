@@ -22,7 +22,7 @@ function Services() {
   return (
     <div>
       <ServicesTitle sx={{ pt: 10, pb: 7 }}>Why Steampunk?</ServicesTitle>
-      <Grid container spacing={2} s>
+      <Grid container>
         <Grid xs={6} sx={{ ml: "70px" }}>
           <StyledParagraph variant="p">
             Steampunk provides the hardware, educators and infrastructure

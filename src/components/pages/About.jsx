@@ -22,7 +22,7 @@ function About() {
   return (
     <div>
       <AboutTitle sx={{ pt: 18, pb: 7 }}>How can we help?</AboutTitle>
-      <Grid container spacing={2}>
+      <Grid container>
         <Grid xs={6}></Grid>
         <Grid xs={6}>
           <StyledListItem sx={{ display: "list-item" }}>
