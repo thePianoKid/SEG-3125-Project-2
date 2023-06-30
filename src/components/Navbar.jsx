@@ -62,7 +62,7 @@ function Navbar() {
             variant="outlined"
             onClick={handleSearchOpen}
             sx={{
-              fontFamily: "Roboto",
+              fontFamily: "Josefin Sans",
               fontSize: "16px",
               color: properties.style.primary.grey,
               border: properties.style.primary.grey,
