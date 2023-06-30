@@ -23,9 +23,7 @@ const TimeRemaining = styled(Typography)(() => ({
   color: properties.style.primary.grey,
 }));
 
-function Quiz(props) {
-  const { targetAudience } = props;
-
+function Quiz() {
   return (
     <div>
       <Navbar />

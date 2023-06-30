@@ -5,6 +5,7 @@ import Home from "./components/pages/Home";
 import Contact from "./components/pages/Contact";
 import Quiz from "./components/pages/Quiz";
 import QuizContent from "./components/pages/QuixContent";
+import Quote from "./components/pages/Quote";
 import { properties } from "./properties";
 import { createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@emotion/react";
@@ -50,6 +51,11 @@ const router = createBrowserRouter([
   {
     path: "/servicespagehome",
     element: <PitchPage titleText={"What we do best"} />
+  },
+
+  {
+    path: "/quote",
+    element: <Quote />
   }
 ])
 
