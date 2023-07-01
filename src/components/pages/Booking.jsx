@@ -28,7 +28,7 @@ function Booking() {
         the workshop.
       </SplashPageBody>
       <SplashPageBody sx={{ pt: 2, pb: 4 }}>
-        Booking a workshop is outside of Steampunk's domain, so it is not included in the site.
+        Booking a workshop is outside of Steampunk's domain, so it is not included in this demo site.
       </SplashPageBody>
       <Link to="/">
         <ThemedButton btnText="Go back home" />
