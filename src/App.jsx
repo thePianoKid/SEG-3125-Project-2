@@ -25,18 +25,8 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/quizeducator",
-    element: <Quiz target="educator" />
-  },
-  
-  {
-    path: "/quizstudent",
-    element: <Quiz target="student" />
-  },
-
-  {
-    path: "/quizparent",
-    element: <Quiz target="parent" />
+    path: "/quiz",
+    element: <Quiz />
   },
 
   {

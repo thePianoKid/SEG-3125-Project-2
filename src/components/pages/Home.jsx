@@ -44,13 +44,13 @@ const Home = () => {
             Revolutionize your education centre with educational resources and
             passionate instructors who specialize in teaching STEM.
           </SplashPageBody>
-          <Link to="/quizeducator">
+          <Link to="/quiz?usertype=educator">
             <ThemedButton sx={{ mr: "40px" }} btnText={"Educators"} />
           </Link>
-          <Link to="/quizstudent">
+          <Link to="/quiz?usertype=student">
             <ThemedButton sx={{ mr: "40px" }} btnText={"Students"} />
           </Link>
-          <Link to="/quizparent">
+          <Link to="/quiz?usertype=parent">
             <ThemedButton btnText={"Parents"} />
           </Link>
         </Grid>

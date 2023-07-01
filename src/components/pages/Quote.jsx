@@ -4,7 +4,7 @@ import { properties } from "../../properties";
 import { useLocation } from "react-router-dom";
 import ContactForm from "./ContactForm";
 
-function useQuery() {
+export function useQuery() {
   const { search } = useLocation();
 
   return React.useMemo(() => new URLSearchParams(search), [search]);
