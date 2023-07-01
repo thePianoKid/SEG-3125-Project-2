@@ -37,40 +37,6 @@ const originalCityData = [
   createCityData("Smith Falls", 2, "9-12"),
 ];
 
-function BootstrapDialogTitle(props) {
-  const { children, onClose, searchForCity, ...other } = props;
-
-  return (
-    <DialogTitle sx={{ m: 0, p: 2 }} {...other}>
-      {children}
-      {searchForCity ? (
-        <IconButton
-          aria-label="close"
-          onClick={onClose}
-          sx={{
-            position: "absolute",
-            right: 8,
-            top: 8,
-          }}
-        >
-          <CloseIcon />
-        </IconButton>
-      ) : (
-        <Button
-          sx={{
-            color: properties.style.primary.grey,
-            position: "absolute",
-            right: 8,
-            top: 8,
-          }}
-        >
-          Back
-        </Button>
-      )}
-    </DialogTitle>
-  );
-}
-
 function WorkshopSearchCity({ onClose, selectedValue, open }) {
   const [originalWorkshopData, setOriginalWorkshopData] = useState([]);
 
@@ -103,6 +69,11 @@ function WorkshopSearchCity({ onClose, selectedValue, open }) {
     setRows(tempArr);
   };
 
+  const handleBack = () => {
+    setRows(originalCityData);
+    setSearchForCity(true);
+  }
+
   const searchThroughRows = (event) => {
     const userInput = event.target.value;
     setInputValue(userInput);
@@ -131,7 +102,32 @@ function WorkshopSearchCity({ onClose, selectedValue, open }) {
 
   return (
     <Dialog onClose={handleClose} open={open} fullWidth={true} maxWidth={"md"}>
-      <BootstrapDialogTitle onClose={handleClose} searchForCity={searchForCity}>
+      <DialogTitle sx={{ m: 0, p: 2 }}>
+        {searchForCity ? (
+          <IconButton
+            aria-label="close"
+            onClick={onClose}
+            sx={{
+              position: "absolute",
+              right: 8,
+              top: 8,
+            }}
+          >
+            <CloseIcon />
+          </IconButton>
+        ) : (
+          <Button
+            sx={{
+              color: properties.style.primary.grey,
+              position: "absolute",
+              right: 8,
+              top: 8,
+            }}
+            onClick={handleBack}
+          >
+            Back
+          </Button>
+        )}
         Search for workshops near you
         <TextField
           label={searchForCity ? "Filter by city" : "Search for workshop"}
@@ -144,7 +140,7 @@ function WorkshopSearchCity({ onClose, selectedValue, open }) {
           onChange={searchThroughRows}
           value={inputValue}
         />
-      </BootstrapDialogTitle>
+      </DialogTitle>
       <DialogContent dividers>
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
