@@ -5,6 +5,7 @@ import { Grid } from "@mui/material";
 import ThemedButton from "../ThemedButton";
 import { properties } from "../../properties";
 import servicesImage from "../../resources/images/services-page-img.jpeg";
+import { Link } from "react-router-dom";
 
 const ServicesTitle = styled(Typography)(() => ({
   margin: "auto",
@@ -39,10 +40,16 @@ function Services() {
             hardware that that is tailored to your needs.
           </StyledParagraph>
           <Container sx={{ pb: "30px" }}></Container>
-          <ThemedButton btnText={"Request a Quote"} />
+          <Link to="/servicespagehome">
+            <ThemedButton btnText={"Request a Quote"} />
+          </Link>
         </Grid>
         <Grid xs={6} sx={{ pt: 5 }}>
-          <img src={servicesImage} style={{ width: "70%" }} alt="Service page" />
+          <img
+            src={servicesImage}
+            style={{ width: "70%" }}
+            alt="Service page"
+          />
         </Grid>
       </Grid>
     </div>

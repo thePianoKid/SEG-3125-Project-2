@@ -5,6 +5,7 @@ import { Grid, ListItem, Typography, Container } from "@mui/material";
 import ThemedButton from "../ThemedButton";
 import { properties } from "../../properties";
 import aboutUsImage from "../../resources/images/about-us-img.jpeg";
+import { Link } from "react-router-dom";
 
 const AboutTitle = styled(Typography)(() => ({
   margin: "auto",
@@ -40,7 +41,9 @@ function About() {
             across Ontario & Québec
           </StyledListItem>
           <Container sx={{ pb: "30px" }}></Container>
-          <ThemedButton btnText={"Educators, start here"} />
+          <Link to="/quizeducator">
+            <ThemedButton btnText={"Educators, start here"} />
+          </Link>
         </Grid>
       </Grid>
     </div>
