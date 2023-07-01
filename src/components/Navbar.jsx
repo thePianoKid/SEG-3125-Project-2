@@ -15,8 +15,6 @@ const StyledAppBar = styled(AppBar)(() => ({
   borderBottom: "2px solid #E2E2E2",
 }));
 
-// TODO: Fix me!!
-// The logo is not centered
 const Logo = styled("img")(() => ({
   margin: "auto",
   textAlign: "center",
@@ -46,7 +44,6 @@ function Navbar() {
   const handleSearchClose = (value) => {
     setOpen(false);
     setSelectedValue(value);
-    console.log("Selected city: " + value);
   };
 
   const navigate = useNavigate();

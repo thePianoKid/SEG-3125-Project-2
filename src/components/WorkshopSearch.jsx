@@ -79,6 +79,9 @@ function WorkshopSearchCity({ onClose, selectedValue, open }) {
 
   const handleClose = () => {
     onClose(selectedValue);
+    // TODO: Wait for close to reset state
+    setSearchForCity(true);
+    setRows(originalCityData);
   };
 
   const handleCityClick = (row) => {
