@@ -18,8 +18,8 @@ const SplashPageBody = styled(Typography)(() => ({
 }));
 
 const StyledListItem = styled(ListItem)(() => ({
-    fontFamily: "Roboto",
-    color: properties.style.primary.grey,
+  fontFamily: "Roboto",
+  color: properties.style.primary.grey,
   fontSize: "16px",
 }));
 
@@ -31,8 +31,8 @@ function useQuery() {
 
 function Quote() {
   const [confimation, setConfirmation] = useState(false);
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   let quote = useQuery();
   let serviceName = properties.services[quote.get("service")];
 
@@ -42,7 +42,7 @@ function Quote() {
 
   const handleMessageChange = (event) => {
     setMessage(event.target.value);
-  }
+  };
 
   return (
     <div>
@@ -58,19 +58,15 @@ function Quote() {
           <SplashPageBody sx={{ pt: 2, pb: 1, ml: 3 }}>
             Submission details
           </SplashPageBody>
-          <StyledListItem sx={{ ml: 3 }}>
-            Service: {serviceName}
-          </StyledListItem>
-          <StyledListItem sx={{ ml: 3 }}>
-            Email: {email}
-          </StyledListItem>
+          <StyledListItem sx={{ ml: 3 }}>Service: {serviceName}</StyledListItem>
+          <StyledListItem sx={{ ml: 3 }}>Email: {email}</StyledListItem>
           <StyledListItem sx={{ ml: 3 }}>
             Other comments: {message}
           </StyledListItem>
         </div>
       ) : (
         <div>
-          <SplashPageTitle sx={{ pt: 4, ml: 3 }}>Request Quote</SplashPageTitle>
+          <SplashPageTitle sx={{ pt: 4, pb: 2, ml: 3 }}>Request Quote</SplashPageTitle>
           <SplashPageBody sx={{ pt: 2, pb: 3, ml: 3 }}>
             Requested Service: {serviceName}
           </SplashPageBody>
