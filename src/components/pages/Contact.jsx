@@ -6,9 +6,13 @@ function Contact() {
   return (
     <div>
       <Navbar />
-      <ContactForm titleText="Contact Steampunk" submitBtnText="Submit" />
+      <ContactForm
+        titleText="Contact Steampunk"
+        submitBtnText="Submit"
+        requireMessage={true}
+      />
     </div>
-  )
-};
+  );
+}
 
 export default Contact;

@@ -22,11 +22,13 @@ const StyledListItem = styled(ListItem)(() => ({
 }));
 
 function ContactForm(props) {
-  const { titleText, submitBtnText } = props;
+  const { titleText, submitBtnText, requireMessage } = props;
 
   const [confimation, setConfirmation] = useState(false);
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [emailError, setEmailError] = useState(false);
+  const [messageError, setMessageError] = useState(false);
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -34,6 +36,34 @@ function ContactForm(props) {
 
   const handleMessageChange = (event) => {
     setMessage(event.target.value);
+  };
+
+  const handleClick = () => {
+    setEmailError(false);
+    setMessageError(false);
+
+    console.log(requireMessage)
+
+    if (email.length > 0) {
+      if (email.includes("@")) {
+        const splitEmail = email.split("@");
+        if (splitEmail[1].includes(".")) {
+            if (requireMessage && message.length <= 0) {
+                setMessageError(true);
+                return;
+            } else {
+                setConfirmation(true);
+                return;
+            }
+        }
+      }
+    }
+    
+    if (!(requireMessage && message.length > 0)) {
+        setMessageError(true);
+    }
+
+    setEmailError(true);
   };
 
   return (
@@ -57,7 +87,7 @@ function ContactForm(props) {
       ) : (
         <div>
           <SplashPageTitle sx={{ pt: 4, pb: 2, ml: 3 }}>
-            { titleText }
+            {titleText}
           </SplashPageTitle>
           <Grid sx={{ pb: 3 }} container>
             <TextField
@@ -65,6 +95,8 @@ function ContactForm(props) {
               label="Enter your work email..."
               variant="filled"
               onChange={handleEmailChange}
+              error={emailError}
+              helperText={emailError ? "Please enter a valid email." : ""}
             />
           </Grid>
           <Grid sx={{ pb: 3 }}>
@@ -75,12 +107,14 @@ function ContactForm(props) {
               multiline
               rows={5}
               onChange={handleMessageChange}
+              error={messageError}
+              helperText={messageError ? "Please enter your message." : ""}
             />
           </Grid>
           <ThemedButton
             sx={{ ml: 3 }}
             btnText={submitBtnText}
-            onClick={() => setConfirmation(true)}
+            onClick={handleClick}
           />
         </div>
       )}

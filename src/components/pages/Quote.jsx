@@ -17,7 +17,11 @@ function Quote() {
   return (
     <div>
       <Navbar />
-      <ContactForm titleText={"Request Quote for \"" + serviceName + "\"" } submitBtnText="Request Quote" />
+      <ContactForm
+        titleText={'Request Quote for "' + serviceName + '"'}
+        submitBtnText="Request Quote"
+        requireMessage={false}
+      />
     </div>
   );
 }
