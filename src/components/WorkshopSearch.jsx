@@ -12,6 +12,7 @@ import {
   DialogContent,
   DialogTitle,
   IconButton,
+  TextField,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { properties } from "../properties";
@@ -24,8 +25,19 @@ function createWorkshopData(name, educationCentre, ageRange) {
   return { name, educationCentre, ageRange };
 }
 
+const originalCityData = [
+  createCityData("Almer", 1, "6-14"),
+  createCityData("Almonte", 4, "5-16"),
+  createCityData("Carleton Place", 2, "8-12"),
+  createCityData("Gatineau", 1, "8-14"),
+  createCityData("Ottawa", 3, "8-12"),
+  createCityData("Perth", 2, "9-12"),
+  createCityData("Renfrew", 1, "8-14"),
+  createCityData("Smith Falls", 2, "9-12"),
+];
+
 function BootstrapDialogTitle(props) {
-  const { children, onClose, searchForCity, setSearchForCity, ...other } = props;
+  const { children, onClose, searchForCity, ...other } = props;
 
   return (
     <DialogTitle sx={{ m: 0, p: 2 }} {...other}>
@@ -50,7 +62,6 @@ function BootstrapDialogTitle(props) {
             right: 8,
             top: 8,
           }}
-          // onClick={() => setSearchForCity(true)}
         >
           Back
         </Button>
@@ -60,27 +71,19 @@ function BootstrapDialogTitle(props) {
 }
 
 function WorkshopSearchCity({ onClose, selectedValue, open }) {
-  const [searchForCity, setSearchForCity] = useState(true);
+  const [originalWorkshopData, setOriginalWorkshopData] = useState([]);
 
-  const [rows, setRows] = useState([
-    createCityData("Almer", 1, "6-14"),
-    createCityData("Almonte", 4, "5-16"),
-    createCityData("Carleton Place", 2, "8-12"),
-    createCityData("Gatineau", 1, "8-14"),
-    createCityData("Ottawa", 3, "8-12"),
-    createCityData("Perth", 2, "9-12"),
-    createCityData("Renfrew", 1, "8-14"),
-    createCityData("Smith Falls", 2, "9-12"),
-  ]);
+  const [searchForCity, setSearchForCity] = useState(true);
+  const [rows, setRows] = useState(originalCityData);
 
   const handleClose = () => {
     onClose(selectedValue);
   };
 
   const handleCityClick = (row) => {
-    let workshopData = [];
+    let tempArr = []
     for (let i = 1; i < row.availableWorkshops + 1; i++) {
-      workshopData.push(
+      tempArr.push(
         createWorkshopData(
           "Example workshop " + i.toString(),
           "Example Education Centre",
@@ -88,15 +91,50 @@ function WorkshopSearchCity({ onClose, selectedValue, open }) {
         )
       );
     }
-
+    
     setSearchForCity(false);
-    setRows(workshopData);
+    setOriginalWorkshopData(tempArr);
+    setRows(tempArr);
+  };
+
+  const searchThroughRows = (event) => {
+    const userInput = event.target.value;
+    let filteredRows = [];
+    if (searchForCity) {
+      for (const i in originalCityData) {
+        if (
+          originalCityData[i]["city"]
+            .toLowerCase()
+            .includes(userInput.toLowerCase())
+        ) {
+          filteredRows.push(originalCityData[i]);
+        }
+      }
+    } else {
+      for (const j in originalWorkshopData) {
+        if (originalWorkshopData[j]["name"].toLowerCase().includes(userInput)) {
+          filteredRows.push(originalWorkshopData[j]);
+        }
+      }
+    }
+
+    setRows(filteredRows);
   };
 
   return (
     <Dialog onClose={handleClose} open={open} fullWidth={true} maxWidth={"md"}>
-      <BootstrapDialogTitle onClose={handleClose} searchForCity={searchForCity} setSearchForCity={setSearchForCity}>
+      <BootstrapDialogTitle onClose={handleClose} searchForCity={searchForCity}>
         Search for workshops near you
+        <TextField
+          label="Filter"
+          size="small"
+          sx={{
+            position: "absolute",
+            right: searchForCity ? 50 : 75,
+            top: 8,
+          }}
+          onChange={searchThroughRows}
+        />
       </BootstrapDialogTitle>
       <DialogContent dividers>
         <TableContainer component={Paper}>
