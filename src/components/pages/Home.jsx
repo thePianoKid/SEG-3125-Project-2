@@ -10,6 +10,7 @@ import { Typography } from "@mui/material"
 import { styled } from "@mui/material/styles";
 import { properties } from "../../properties";
 import { Link } from "react-router-dom";
+import spashPageImage from "../../resources/images/splash-page-img.jpeg";
 
 const SplashPageTitle = styled(Typography)(() => ({
     fontFamily: "Josefin Sans",
@@ -27,7 +28,9 @@ const Home = () => {
     <div>
         <Navbar />
         <Grid container>
-            <Grid xs={6}></Grid>
+            <Grid xs={6}>
+                <img style={{ paddingTop: "50px", width: "100%" }} src={spashPageImage} alt="Spash Page Image" />
+            </Grid>
             <Grid xs={6}>
                 <SplashPageTitle sx={{ pt: 23 }}>
                     Unlock the potential of future <strong>scientists</strong> and <strong>engineers</strong>
