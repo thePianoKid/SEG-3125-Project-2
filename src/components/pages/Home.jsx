@@ -29,7 +29,7 @@ const Home = () => {
         <Navbar />
         <Grid container>
             <Grid xs={6}>
-                <img style={{ paddingTop: "50px", width: "100%" }} src={spashPageImage} alt="Spash Page Image" />
+                <img style={{ paddingTop: "50px", width: "100%" }} src={spashPageImage} alt="Spash Page" />
             </Grid>
             <Grid xs={6}>
                 <SplashPageTitle sx={{ pt: 23 }}>

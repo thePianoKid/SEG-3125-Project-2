@@ -4,6 +4,7 @@ import { styled } from "@mui/material/styles";
 import { Grid } from "@mui/material";
 import ThemedButton from "../ThemedButton";
 import { properties } from "../../properties";
+import servicesImage from "../../resources/images/services-page-img.jpeg";
 
 const ServicesTitle = styled(Typography)(() => ({
   margin: "auto",
@@ -21,9 +22,9 @@ const StyledParagraph = styled(Typography)(() => ({
 function Services() {
   return (
     <div>
-      <ServicesTitle sx={{ pt: 10, pb: 7 }}>Why Steampunk?</ServicesTitle>
-      <Grid container>
-        <Grid xs={6} sx={{ ml: "70px" }}>
+      <ServicesTitle sx={{ pt: 10 }}>Why Steampunk?</ServicesTitle>
+      <Grid container spacing={0}>
+        <Grid xs={5} sx={{ pt: 20, ml: "70px" }}>
           <StyledParagraph variant="p">
             Steampunk provides the hardware, educators and infrastructure
             required to run a successful STEM education program
@@ -40,7 +41,9 @@ function Services() {
           <Container sx={{ pb: "30px" }}></Container>
           <ThemedButton btnText={"Request a Quote"} />
         </Grid>
-        <Grid xs={6}></Grid>
+        <Grid xs={6} sx={{ pt: 5 }}>
+          <img src={servicesImage} style={{ width: "70%" }} alt="Service page" />
+        </Grid>
       </Grid>
     </div>
   );
