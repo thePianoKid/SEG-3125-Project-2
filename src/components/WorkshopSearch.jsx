@@ -75,6 +75,7 @@ function WorkshopSearchCity({ onClose, selectedValue, open }) {
 
   const [searchForCity, setSearchForCity] = useState(true);
   const [rows, setRows] = useState(originalCityData);
+  const [inputValue, setInputValue] = useState("");
 
   const handleClose = () => {
     onClose(selectedValue);
@@ -92,6 +93,7 @@ function WorkshopSearchCity({ onClose, selectedValue, open }) {
       );
     }
     
+    setInputValue("");
     setSearchForCity(false);
     setOriginalWorkshopData(tempArr);
     setRows(tempArr);
@@ -99,6 +101,8 @@ function WorkshopSearchCity({ onClose, selectedValue, open }) {
 
   const searchThroughRows = (event) => {
     const userInput = event.target.value;
+    setInputValue(userInput);
+
     let filteredRows = [];
     if (searchForCity) {
       for (const i in originalCityData) {
@@ -126,7 +130,7 @@ function WorkshopSearchCity({ onClose, selectedValue, open }) {
       <BootstrapDialogTitle onClose={handleClose} searchForCity={searchForCity}>
         Search for workshops near you
         <TextField
-          label="Filter"
+          label={ searchForCity ? "Filter by city" : "Search for workshop" }
           size="small"
           sx={{
             position: "absolute",
@@ -134,6 +138,7 @@ function WorkshopSearchCity({ onClose, selectedValue, open }) {
             top: 8,
           }}
           onChange={searchThroughRows}
+          value={inputValue}
         />
       </BootstrapDialogTitle>
       <DialogContent dividers>
