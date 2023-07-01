@@ -6,11 +6,12 @@ import Contact from "./components/pages/Contact";
 import Quiz from "./components/pages/Quiz";
 import QuizContent from "./components/pages/QuixContent";
 import Quote from "./components/pages/Quote";
+import PitchPage from "./components/pages/PitchPage";
+import Booking from "./components/pages/Booking";
 import { properties } from "./properties";
 import { createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@emotion/react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import PitchPage from "./components/pages/PitchPage";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,11 @@ const router = createBrowserRouter([
   {
     path: "/quote",
     element: <Quote />
+  },
+
+  {
+    path: "/book",
+    element: <Booking />
   }
 ])
 

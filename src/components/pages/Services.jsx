@@ -21,7 +21,7 @@ const StyledParagraph = styled(Typography)(() => ({
 
 function Services() {
   return (
-    <div>
+    <div id="servicesAnchor">
       <ServicesTitle sx={{ pt: 10 }}>Why Steampunk?</ServicesTitle>
       <Grid container spacing={0}>
         <Grid xs={5} sx={{ pt: 20, ml: "70px" }}>

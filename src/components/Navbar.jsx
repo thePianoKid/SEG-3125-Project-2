@@ -7,6 +7,7 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import { Button, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { Search } from "@mui/icons-material";
 import WorkshopSearchCity from "./WorkshopSearch";
 import { properties } from "../properties";
@@ -80,8 +81,12 @@ function Navbar() {
             sx={{ ":hover": { cursor: "pointer" } }}
             onClick={navHome}
           />
-          <MenuItem>About</MenuItem>
-          <MenuItem>Services</MenuItem>
+          <HashLink to="/#aboutAnchor" style={{ textDecoration: "none" }}>
+            <MenuItem>About</MenuItem>
+          </HashLink>
+          <HashLink to="/#servicesAnchor" style={{ textDecoration: "none" }}>
+            <MenuItem>Services</MenuItem>
+          </HashLink>
           <MenuItem onClick={navContact}>Contact</MenuItem>
         </Toolbar>
       </StyledAppBar>

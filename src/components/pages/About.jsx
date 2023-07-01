@@ -21,7 +21,7 @@ const StyledListItem = styled(ListItem)(() => ({
 
 function About() {
   return (
-    <div>
+    <div id="aboutAnchor">
       <AboutTitle sx={{ pt: 18 }}>How can we help?</AboutTitle>
       <Grid container spacing={0}>
         <Grid xs={5}>

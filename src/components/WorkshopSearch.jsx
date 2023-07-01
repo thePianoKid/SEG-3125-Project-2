@@ -16,6 +16,7 @@ import {
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { properties } from "../properties";
+import { Link } from "react-router-dom";
 
 function createCityData(city, availableWorkshops, ageRange) {
   return { city, availableWorkshops, ageRange };
@@ -85,7 +86,7 @@ function WorkshopSearchCity({ onClose, selectedValue, open }) {
   };
 
   const handleCityClick = (row) => {
-    let tempArr = []
+    let tempArr = [];
     for (let i = 1; i < row.availableWorkshops + 1; i++) {
       tempArr.push(
         createWorkshopData(
@@ -95,7 +96,7 @@ function WorkshopSearchCity({ onClose, selectedValue, open }) {
         )
       );
     }
-    
+
     setInputValue("");
     setSearchForCity(false);
     setOriginalWorkshopData(tempArr);
@@ -133,7 +134,7 @@ function WorkshopSearchCity({ onClose, selectedValue, open }) {
       <BootstrapDialogTitle onClose={handleClose} searchForCity={searchForCity}>
         Search for workshops near you
         <TextField
-          label={ searchForCity ? "Filter by city" : "Search for workshop" }
+          label={searchForCity ? "Filter by city" : "Search for workshop"}
           size="small"
           sx={{
             position: "absolute",
@@ -162,10 +163,13 @@ function WorkshopSearchCity({ onClose, selectedValue, open }) {
                   hover
                   key={searchForCity ? row.city : row.name}
                   sx={{
+                    textDecoration: "none",
                     "&:last-child td, &:last-child th": { border: 0 },
                     "&:hover": { cursor: "pointer" },
                   }}
                   onClick={() => handleCityClick(row)}
+                  component={Link}
+                  to={searchForCity ? "" : "/book"}
                 >
                   <TableCell component="th" scope="row">
                     {searchForCity ? row.city : row.name}
