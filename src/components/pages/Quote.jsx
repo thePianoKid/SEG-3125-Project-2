@@ -12,7 +12,7 @@ export function useQuery() {
 
 function Quote() {
   let quote = useQuery();
-  let serviceName = properties.services[quote.get("service")];
+  let serviceName = properties.services[quote.get("service")].titleText;
 
   return (
     <div>

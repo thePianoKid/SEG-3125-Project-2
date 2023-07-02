@@ -36,12 +36,12 @@ const router = createBrowserRouter([
 
   {
     path: "/servicespagequiz",
-    element: <PitchPage titleText={"You're a perfect fit!"} />
+    element: <PitchPage headerText={"You're a perfect fit!"} />
   },
 
   {
     path: "/servicespagehome",
-    element: <PitchPage titleText={"What we do best"} />
+    element: <PitchPage headerText={"What we do best"} />
   },
 
   {
