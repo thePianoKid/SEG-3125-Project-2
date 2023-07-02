@@ -1,4 +1,4 @@
-# Steampunk Education - 1st Iteratinon
+# Steampunk Education - 1st Iteration
 [![Netlify Status](https://api.netlify.com/api/v1/badges/0e3114b6-990c-4d78-a8fb-397636cf308f/deploy-status)](https://app.netlify.com/sites/steampunk-education-step-3/deploys)
 
 ## Purpose
@@ -6,10 +6,10 @@ This is the first iteration of my site. This site was made for uOttawa's SEG 312
 
 Steampunk Education is a STEM education company that I co-founded with my brother; after 4 years of running the company, we have taught over 1000 students across Ontario and Québec.
 
-> Please note that is verison of the site is frozen as per the assignment instructions. You can find the most recent version of the site [here](https://github.com/thePianoKid/Steampunk-Education).
+> Please note that is version of the site is frozen as per the assignment instructions. You can find the most recent version of the site [here](https://github.com/thePianoKid/Steampunk-Education).
 
 ## Personality
-Steampunk’s voice should be professional, but since Steampunk targets education centres, media management should also strive to inject humour and lightheartedness into Steampunk’s content. Steampunk shys away from the buzzwords and stock photos that permeate most corporate sites. Steampunk draws from industrial design since it is the most common aesthetic in STEAM. Clean lines and simplistic shapes should permeate Steampunk’s website and ad campaigns.
+Steampunk’s voice should be professional, but since Steampunk targets education centres, media management should also strive to inject humour and lightheartedness into Steampunk’s content. Steampunk shies away from the buzzwords and stock photos that permeate most corporate sites. Steampunk draws from industrial design since it is the most common aesthetic in STEAM. Clean lines and simplistic shapes should permeate Steampunk’s website and ad campaigns.
 
 ## Personas
 ---
@@ -90,6 +90,11 @@ Goal: Phil's goal is to communicate with a few instructors to inquire about thei
         - Search for & select a workshop location
 - **Communicate** (new)
     - Contact Steampunk team to ask specific questions about services
+- **Perform a monitored activity**
+    - Fill out quiz
+- **Analyze Results** (new)
+    - I added this process; all the suggestions were concerning communication
+    - The users can analyze the results of their quiz. They get a personalized recommendation based on the user type & their answers to the quiz
 
 ## Todos 
 Here's what I want to accomplish in the next few weeks:
