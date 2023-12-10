@@ -103,3 +103,4 @@ Here's what I want to accomplish in the next few weeks:
     - Add real questions to the quiz page
     - Validate the inputs 
 - Add footer 
+test..
